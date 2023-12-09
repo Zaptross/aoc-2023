@@ -2,7 +2,19 @@ pub fn part_one_test_set() -> Vec<&'static str> {
     return vec!["1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7uchet"];
 }
 
-pub fn part_one_data_set() -> Vec<&'static str> {
+pub fn part_two_test_set() -> Vec<&'static str> {
+    return vec![
+        "two1nine",
+        "eightwothree",
+        "abcone2threexyz",
+        "xtwone3four",
+        "4nineeightseven2",
+        "zoneight234",
+        "7pqrstsixteen",
+    ];
+}
+
+pub fn day_one_data_set() -> Vec<&'static str> {
     return vec![
         "nine92jnhgqzctpgbcbpz",
         "sevensddvc73three",
