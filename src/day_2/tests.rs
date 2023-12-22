@@ -1,7 +1,8 @@
 use super::{
     data::{part_one_cube_set, part_one_test_set},
     functions::{
-        extract_cubes_from_turn, extract_game_data, validate_set_of_games, CubeSet, GameData,
+        extract_cubes_from_turn, extract_game_data, validate_game, validate_set_of_games, CubeSet,
+        GameData,
     },
 };
 
@@ -11,6 +12,31 @@ fn day_2_validates_set_of_games() {
         validate_set_of_games(part_one_cube_set(), part_one_test_set()),
         8
     )
+}
+
+#[test]
+fn day_2_validate_game() {
+    let cases = vec![
+        (GameData::new(1, vec![CubeSet::new(1, 1, 1)]), 1),
+        (GameData::new(2, vec![CubeSet::new(100, 0, 0)]), 0),
+        (
+            GameData::new(
+                3,
+                vec![
+                    CubeSet::new(1, 0, 0),
+                    CubeSet::new(0, 1, 0),
+                    CubeSet::new(0, 0, 1),
+                ],
+            ),
+            0,
+        ),
+    ];
+
+    let set = &CubeSet::new(1, 1, 1);
+
+    for (input, expected) in cases {
+        assert_eq!(validate_game(set, input), expected);
+    }
 }
 
 #[test]
