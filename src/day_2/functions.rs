@@ -25,6 +25,10 @@ pub fn validate_set_of_games(set: CubeSet, games: Vec<&str>) -> i32 {
     return 0;
 }
 
+pub(crate) fn validate_game(set: &CubeSet, game: GameData) -> i32 {
+    return 0;
+}
+
 pub(crate) fn extract_game_data(game: &str) -> GameData {
     let split_game_id_and_games: Vec<&str> = game.split(": ").collect();
     let game_id: i32 = split_game_id_and_games[0]
