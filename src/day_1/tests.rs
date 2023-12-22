@@ -1,8 +1,8 @@
-use crate::day_1::functions::{find_and_concat_digits, find_digit, find_digit_direction};
-
 use super::{
     data::{part_one_test_set, part_two_test_set},
-    functions::{find_digit_word, sum_found_digits},
+    functions::{
+        find_and_concat_digits, find_digit, find_digit_direction, find_digit_word, sum_found_digits,
+    },
 };
 
 #[test]
