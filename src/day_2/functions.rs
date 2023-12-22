@@ -21,6 +21,14 @@ impl CubeSet {
     }
 }
 
+pub fn calculate_power_of_all_games(games: Vec<&str>) -> i32 {
+    return 0;
+}
+
+pub(crate) fn calculate_power_of_game(game: GameData) -> i32 {
+    return 0;
+}
+
 pub fn validate_set_of_games(set: CubeSet, games: Vec<&str>) -> i32 {
     let mut result = 0;
 
