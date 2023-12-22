@@ -1,8 +1,8 @@
 use super::{
     data::{part_one_cube_set, part_one_test_set},
     functions::{
-        extract_cubes_from_turn, extract_game_data, validate_game, validate_set_of_games, CubeSet,
-        GameData,
+        calculate_power_of_all_games, calculate_power_of_game, extract_cubes_from_turn,
+        extract_game_data, validate_game, validate_set_of_games, CubeSet, GameData,
     },
 };
 
@@ -95,5 +95,25 @@ fn day_2_extract_cubes_from_turn() {
         assert_eq!(result.red, expected.red);
         assert_eq!(result.green, expected.green);
         assert_eq!(result.blue, expected.blue);
+    }
+}
+
+#[test]
+fn day_2_calculate_power_of_all_games() {
+    assert_eq!(calculate_power_of_all_games(part_one_test_set()), 2286)
+}
+
+#[test]
+fn day_2_calculate_power_of_game() {
+    let cases = vec![
+        (extract_game_data(part_one_test_set()[0]), 48),
+        (extract_game_data(part_one_test_set()[1]), 12),
+        (extract_game_data(part_one_test_set()[2]), 1560),
+        (extract_game_data(part_one_test_set()[3]), 630),
+        (extract_game_data(part_one_test_set()[4]), 36),
+    ];
+
+    for (input, expected) in cases {
+        assert_eq!(calculate_power_of_game(input), expected)
     }
 }
