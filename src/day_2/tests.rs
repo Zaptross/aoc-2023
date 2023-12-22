@@ -1,6 +1,8 @@
 use super::{
     data::{part_one_cube_set, part_one_test_set},
-    functions::{extract_game_data, validate_set_of_games, CubeSet, GameData},
+    functions::{
+        extract_cubes_from_turn, extract_game_data, validate_set_of_games, CubeSet, GameData,
+    },
 };
 
 #[test]
@@ -19,7 +21,7 @@ fn day_2_extract_game_data() {
             GameData::new(1, vec![CubeSet::new(4, 0, 3)]),
         ),
         (
-            "Game 2: 3 red, 4 green, 7 blue",
+            "Game 2: 3 red, 7 green, 4 blue",
             GameData::new(2, vec![CubeSet::new(3, 7, 4)]),
         ),
         (
@@ -48,5 +50,24 @@ fn day_2_extract_game_data() {
                 assert_eq!(result.turns[t].blue, expected.turns[t].blue);
             }
         }
+    }
+}
+
+#[test]
+fn day_2_extract_cubes_from_turn() {
+    let cases = vec![
+        ("1 red, 2 green, 3 blue", CubeSet::new(1, 2, 3)),
+        (
+            "1 red, 1 red, 1 red, 1 green, 1 green, 1 blue",
+            CubeSet::new(3, 2, 1),
+        ),
+    ];
+
+    for (input, expected) in cases {
+        let result = extract_cubes_from_turn(input);
+
+        assert_eq!(result.red, expected.red);
+        assert_eq!(result.green, expected.green);
+        assert_eq!(result.blue, expected.blue);
     }
 }
