@@ -28,7 +28,7 @@ fn day_2_validate_game() {
                     CubeSet::new(0, 0, 1),
                 ],
             ),
-            0,
+            3,
         ),
     ];
 
