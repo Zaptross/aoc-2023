@@ -28,12 +28,21 @@ fn main() {
         "Cube Conundrum",
         2,
         1,
-        vec![|| {
-            day_2::functions::validate_set_of_games(
-                day_2::data::part_one_cube_set(),
-                day_2::data::part_one_test_set(),
-            )
-            .to_string()
-        }],
+        vec![
+            || {
+                day_2::functions::validate_set_of_games(
+                    day_2::data::part_one_cube_set(),
+                    day_2::data::part_one_test_set(),
+                )
+                .to_string()
+            },
+            || {
+                day_2::functions::validate_set_of_games(
+                    day_2::data::part_one_cube_set(),
+                    day_2::data::day_two_data_set(),
+                )
+                .to_string()
+            },
+        ],
     );
 }
