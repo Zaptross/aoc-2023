@@ -22,7 +22,13 @@ impl CubeSet {
 }
 
 pub fn validate_set_of_games(set: CubeSet, games: Vec<&str>) -> i32 {
-    return 0;
+    let mut result = 0;
+
+    for game in games {
+        result += validate_game(&set, extract_game_data(game))
+    }
+
+    return result;
 }
 
 pub(crate) fn validate_game(set: &CubeSet, game: GameData) -> i32 {
