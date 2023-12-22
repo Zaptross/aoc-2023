@@ -26,7 +26,16 @@ pub fn validate_set_of_games(set: CubeSet, games: Vec<&str>) -> i32 {
 }
 
 pub(crate) fn validate_game(set: &CubeSet, game: GameData) -> i32 {
-    return 0;
+    for turn in game.turns {
+        // if any set of cubes exceed the maximum allowed
+        if turn.red > set.red || turn.green > set.green || turn.blue > set.blue {
+            // it is not valid and should not be counted
+            return 0;
+        }
+    }
+
+    // if it's valid, it should be counted
+    return game.id;
 }
 
 pub(crate) fn extract_game_data(game: &str) -> GameData {
