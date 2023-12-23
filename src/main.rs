@@ -45,4 +45,19 @@ fn main() {
             },
         ],
     );
+    day::run_day(
+        "Cube Conundrum",
+        2,
+        2,
+        vec![
+            || {
+                day_2::functions::calculate_power_of_all_games(day_2::data::part_one_test_set())
+                    .to_string()
+            },
+            || {
+                day_2::functions::calculate_power_of_all_games(day_2::data::day_two_data_set())
+                    .to_string()
+            },
+        ],
+    );
 }
