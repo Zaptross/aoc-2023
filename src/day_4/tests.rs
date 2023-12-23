@@ -1,25 +1,11 @@
-use crate::day_4::functions::{evaluate_card, extract_vec_numbers};
-
 use super::{
     data::day_four_test_set,
-    functions::{count_points_of_scratchcards, sum_all_points},
+    functions::{count_points_of_scratchcards, evaluate_card, extract_vec_numbers},
 };
 
 #[test]
 fn day_4_count_points_of_scratchcards() {
     assert_eq!(count_points_of_scratchcards(day_four_test_set()), 13)
-}
-
-#[test]
-fn day_4_sum_all_points() {
-    let cases = vec![
-        (vec![1, 2, 3, 4], 10),
-        (vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 55),
-    ];
-
-    for (input, expected) in cases {
-        assert_eq!(sum_all_points(input), expected)
-    }
 }
 
 #[test]
