@@ -1,6 +1,7 @@
 mod day;
 mod day_1;
 mod day_2;
+mod day_3;
 
 fn main() {
     println!("Hello, Advent of Code 2023!");
@@ -59,5 +60,15 @@ fn main() {
                     .to_string()
             },
         ],
+    );
+
+    day::run_day(
+        "Gear Ratios",
+        3,
+        1,
+        vec![|| {
+            day_3::functions::calculate_sum_of_part_numbers(day_3::data::day_three_test_set())
+                .to_string()
+        }],
     );
 }
