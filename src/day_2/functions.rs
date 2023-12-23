@@ -22,11 +22,33 @@ impl CubeSet {
 }
 
 pub fn calculate_power_of_all_games(games: Vec<&str>) -> i32 {
-    return 0;
+    let mut result = 0;
+
+    for game in games {
+        result += calculate_power_of_game(extract_game_data(game))
+    }
+
+    return result;
 }
 
 pub(crate) fn calculate_power_of_game(game: GameData) -> i32 {
-    return 0;
+    let mut red = 0;
+    let mut green = 0;
+    let mut blue = 0;
+
+    for turn in game.turns {
+        if turn.red > red {
+            red = turn.red
+        }
+        if turn.green > green {
+            green = turn.green
+        }
+        if turn.blue > blue {
+            blue = turn.blue
+        }
+    }
+
+    return red * green * blue;
 }
 
 pub fn validate_set_of_games(set: CubeSet, games: Vec<&str>) -> i32 {
