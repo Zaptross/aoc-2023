@@ -2,6 +2,7 @@ mod day;
 mod day_1;
 mod day_2;
 mod day_3;
+mod day_4;
 
 fn main() {
     println!("Hello, Advent of Code 2023!");
@@ -101,6 +102,22 @@ fn main() {
                     true,
                 )
                 .to_string()
+            },
+        ],
+    );
+
+    day::run_day(
+        "Scratchcards",
+        4,
+        1,
+        vec![
+            || {
+                day_4::functions::count_points_of_scratchcards(day_4::data::day_four_test_set())
+                    .to_string()
+            },
+            || {
+                day_4::functions::count_points_of_scratchcards(day_4::data::day_four_data_set())
+                    .to_string()
             },
         ],
     );
