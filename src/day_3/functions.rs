@@ -5,19 +5,33 @@
 // 789
 pub(crate) type Coord = (usize, usize);
 
-pub fn calculate_sum_of_part_numbers(schematic: Vec<&str>) -> i32 {
-    return retrieve_adjacent_part_numbers(to_vec_char(schematic))
+pub fn calculate_sum_of_part_numbers(schematic: Vec<&str>, gear_ratios: bool) -> i32 {
+    return retrieve_adjacent_part_numbers(to_vec_char(schematic), gear_ratios)
         .iter()
         .fold(0, |acc, n| acc + n);
 }
 
-pub(crate) fn retrieve_adjacent_part_numbers(schematic: Vec<Vec<char>>) -> Vec<i32> {
+pub(crate) fn retrieve_adjacent_part_numbers(
+    schematic: Vec<Vec<char>>,
+    gear_ratios: bool,
+) -> Vec<i32> {
     let symbol_coordinates = find_all_symbols(&schematic);
 
     let mut part_numbers: Vec<i32> = vec![];
 
     for symbol in symbol_coordinates {
-        part_numbers.append(&mut retrieve_adjacent_part_number(symbol, &schematic))
+        if gear_ratios {
+            let (r, c) = symbol;
+            if schematic[r][c] == '*' {
+                let result = retrieve_adjacent_part_number(symbol, &schematic);
+
+                if result.len() == 2 {
+                    part_numbers.append(&mut vec![result[0] * result[1]])
+                }
+            }
+        } else {
+            part_numbers.append(&mut retrieve_adjacent_part_number(symbol, &schematic))
+        }
     }
 
     return part_numbers;
