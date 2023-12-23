@@ -2,7 +2,7 @@ use super::{
     data::day_three_test_set,
     functions::{
         calculate_sum_of_part_numbers, find_all_symbols, retrieve_adjacent_part_numbers,
-        to_vec_char, Coord,
+        to_vec_char,
     },
 };
 
