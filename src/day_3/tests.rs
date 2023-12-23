@@ -19,7 +19,7 @@ fn day_3_find_all_symbols() {
     )];
 
     for (input, expected) in cases {
-        let result = find_all_symbols(input);
+        let result = find_all_symbols(&input);
 
         for coord in expected {
             assert!(result.contains(&coord));
@@ -29,7 +29,18 @@ fn day_3_find_all_symbols() {
 
 #[test]
 fn day_3_retrieve_adjacent_part_numbers() {
-    let cases = vec![(vec!["1*.", "...", ".*.", "111"], vec![1, 111])];
+    let cases = vec![
+        (to_vec_char(vec!["1*.", "...", ".*.", "111"]), vec![1, 111]),
+        (to_vec_char(vec!["111", ".*.", "222"]), vec![111, 222]),
+        (
+            to_vec_char(vec![".1.22", "33*44", "....."]),
+            vec![1, 22, 33, 44],
+        ),
+        (
+            to_vec_char(day_three_test_set()),
+            vec![467, 35, 633, 617, 592, 755, 664, 598],
+        ),
+    ];
 
     for (input, expected) in cases {
         let result = retrieve_adjacent_part_numbers(input);
