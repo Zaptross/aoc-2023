@@ -68,12 +68,39 @@ fn main() {
         1,
         vec![
             || {
-                day_3::functions::calculate_sum_of_part_numbers(day_3::data::day_three_test_set())
-                    .to_string()
+                day_3::functions::calculate_sum_of_part_numbers(
+                    day_3::data::day_three_test_set(),
+                    false,
+                )
+                .to_string()
             },
             || {
-                day_3::functions::calculate_sum_of_part_numbers(day_3::data::day_three_data_set())
-                    .to_string()
+                day_3::functions::calculate_sum_of_part_numbers(
+                    day_3::data::day_three_data_set(),
+                    false,
+                )
+                .to_string()
+            },
+        ],
+    );
+    day::run_day(
+        "Gear Ratios",
+        3,
+        2,
+        vec![
+            || {
+                day_3::functions::calculate_sum_of_part_numbers(
+                    day_3::data::day_three_test_set(),
+                    true,
+                )
+                .to_string()
+            },
+            || {
+                day_3::functions::calculate_sum_of_part_numbers(
+                    day_3::data::day_three_data_set(),
+                    true,
+                )
+                .to_string()
             },
         ],
     );
