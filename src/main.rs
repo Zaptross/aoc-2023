@@ -32,7 +32,7 @@ fn main() {
             || {
                 day_2::functions::validate_set_of_games(
                     day_2::data::part_one_cube_set(),
-                    day_2::data::part_one_test_set(),
+                    day_2::data::day_two_test_set(),
                 )
                 .to_string()
             },
@@ -51,7 +51,7 @@ fn main() {
         2,
         vec![
             || {
-                day_2::functions::calculate_power_of_all_games(day_2::data::part_one_test_set())
+                day_2::functions::calculate_power_of_all_games(day_2::data::day_two_test_set())
                     .to_string()
             },
             || {
