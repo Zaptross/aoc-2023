@@ -66,9 +66,15 @@ fn main() {
         "Gear Ratios",
         3,
         1,
-        vec![|| {
-            day_3::functions::calculate_sum_of_part_numbers(day_3::data::day_three_test_set())
-                .to_string()
-        }],
+        vec![
+            || {
+                day_3::functions::calculate_sum_of_part_numbers(day_3::data::day_three_test_set())
+                    .to_string()
+            },
+            || {
+                day_3::functions::calculate_sum_of_part_numbers(day_3::data::day_three_data_set())
+                    .to_string()
+            },
+        ],
     );
 }

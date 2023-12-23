@@ -6,7 +6,9 @@
 pub(crate) type Coord = (usize, usize);
 
 pub fn calculate_sum_of_part_numbers(schematic: Vec<&str>) -> i32 {
-    return 0;
+    return retrieve_adjacent_part_numbers(to_vec_char(schematic))
+        .iter()
+        .fold(0, |acc, n| acc + n);
 }
 
 pub(crate) fn retrieve_adjacent_part_numbers(schematic: Vec<Vec<char>>) -> Vec<i32> {
