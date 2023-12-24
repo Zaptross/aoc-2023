@@ -3,6 +3,7 @@ mod day_1;
 mod day_2;
 mod day_3;
 mod day_4;
+mod day_5;
 
 fn main() {
     println!("Hello, Advent of Code 2023!");
@@ -132,6 +133,22 @@ fn main() {
             },
             || {
                 day_4::functions::count_all_scratch_cards(day_4::data::day_four_data_set())
+                    .to_string()
+            },
+        ],
+    );
+
+    day::run_day(
+        "If You Give A Seed A Fertilizer",
+        5,
+        1,
+        vec![
+            || {
+                day_5::functions::find_nearest_soil_location(day_5::data::day_five_test_set())
+                    .to_string()
+            },
+            || {
+                day_5::functions::find_nearest_soil_location(day_5::data::day_five_data_set())
                     .to_string()
             },
         ],
