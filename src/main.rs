@@ -121,4 +121,19 @@ fn main() {
             },
         ],
     );
+    day::run_day(
+        "Scratchcards",
+        4,
+        2,
+        vec![
+            || {
+                day_4::functions::count_all_scratch_cards(day_4::data::day_four_test_set())
+                    .to_string()
+            },
+            || {
+                day_4::functions::count_all_scratch_cards(day_4::data::day_four_data_set())
+                    .to_string()
+            },
+        ],
+    );
 }
